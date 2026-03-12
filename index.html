@@ -8,208 +8,250 @@
             name="description"
             content="Garret Woods builds practical software tools that solve real-world problems."
     />
+    <link rel="icon" type="image/png" href="whirligig_favicon.png" />
+
     <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --card: #f9fafb;
-      --max: 900px;
-    }
+  :root {
+    --bg: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --card: #f9fafb;
+    --max: 900px;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.55;
-      color: var(--text);
-      background: var(--bg);
-    }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+  }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
 
-    a:hover {
-      color: var(--accent-hover);
-      text-decoration: underline;
-    }
+  a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+  }
 
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
 
-    header {
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
+  header {
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .brand-logo {
+    height: 52px;
+      width: auto;
+      display: block;
+      border-radius: 8px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 72px 0 48px;
+    border-top: none;
+  }
+
+  .eyebrow {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.1;
+    margin: 0 0 16px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin: 0 0 18px;
+  }
+
+  h3 {
+    line-height: 1.3;
+  }
+
+  .hero p {
+    max-width: 720px;
+    color: var(--muted);
+    font-size: 1.08rem;
+    margin: 0 0 24px;
+  }
+
+  section {
+    padding: 36px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  section p {
+    max-width: 760px;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-weight: 600;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btn.primary {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+  }
+
+  .btn.primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    text-decoration: none;
+    border-color: #cbd5e1;
+  }
+
+  .grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px;
+  }
+
+  .card h3 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+  }
+
+  .card p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 0.98rem;
+    max-width: none;
+  }
+
+  .section-body {
+    max-width: 760px;
+  }
+  .hero .section-body {
+    max-width: 760px;
+  }
+  .panel{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .stack {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  footer {
+    padding: 28px 0 40px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    border-top: 1px solid var(--line);
+    margin-top: 32px;
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 2rem;
     }
 
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-    }
-
-    .brand {
-      font-weight: 700;
-      color: var(--text);
+      gap: 12px;
+      align-items: flex-start;
+      flex-direction: column;
     }
 
     .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .hero {
-      padding: 72px 0 48px;
+      padding-top: 48px;
     }
 
-    .eyebrow {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 10px;
+    .wrap {
+      padding: 0 18px;
     }
+  }
+</style>
 
-    h1 {
-      font-size: 2.4rem;
-      line-height: 1.1;
-      margin: 0 0 16px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin: 0 0 24px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    .btn.primary:hover {
-      background: var(--accent-hover);
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      text-decoration: none;
-      border-color: #cbd5e1;
-    }
-
-    section {
-      padding: 32px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin: 0 0 18px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 18px;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-    }
-
-    .card p {
-      margin: 0 0 12px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .stack {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .about p,
-    .contact p {
-      max-width: 750px;
-      color: var(--muted);
-      margin: 0 0 14px;
-    }
-
-    footer {
-      padding: 28px 0 40px;
-      color: var(--muted);
-      font-size: 0.92rem;
-      border-top: 1px solid var(--line);
-      margin-top: 32px;
-    }
-
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      nav {
-        gap: 12px;
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
-
-      .hero {
-        padding-top: 48px;
-      }
-    }
-  </style>
 </head>
 <body>
 <header>
     <div class="wrap">
         <nav>
-            <div class="brand">Whirligig Software</div>
+            <div class="brand">
+              <img src="whirligig_logo_wide_with_text_trimmed.png" alt="Whirligig Software logo" class="brand-logo" />
+            </div>
             <div class="nav-links">
                 <a href="#projects">Projects</a>
                 <a href="#about">About</a>
@@ -222,21 +264,51 @@
 
 <main class="wrap">
     <section class="hero">
-        <div class="eyebrow">Garret Woods</div>
+      <div class="section-body">
+        <div class="eyebrow">Garret Woods · Whirligig Software</div>
         <h1>Systems developer building practical software tools.</h1>
         <p>
             I build data-driven applications that solve real operational problems.
-            My work sits at the intersection of systems, analytics, automation,
-            and user-centered design.
+            My work focuses on software systems, analytics, automation, and
+            user-centered design.
         </p>
         <div class="actions">
             <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn" href="mailto:whirligig@whirligigsoftware.com">Email Me</a>
+            <a class="btn" href="mailto:whirligig@whirligigsoftware.com">Contact</a>
+        </div>
+    </section>
+
+    <section id="focus">
+        <h2>Current Focus</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>Software Systems</h3>
+                <p>
+                    Building practical applications with Django, Python, SQL, and
+                    structured data models.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Data & Analytics</h3>
+                <p>
+                    Working with operational data, reporting workflows, dashboarding,
+                    and automation.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Maps & Outdoor Tools</h3>
+                <p>
+                    Exploring software that connects geospatial data, river conditions,
+                    and outdoor recreation.
+                </p>
+            </article>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Selected Projects</h2>
+        <h2>Active Projects</h2>
         <div class="grid">
             <article class="card">
                 <h3>Best Shake in Town</h3>
@@ -252,7 +324,7 @@
                 <h3>River Trip Estimator</h3>
                 <p>
                     A paddling trip planning tool using river flow data and map-based
-                    route distance to estimate travel duration.
+                    route distance to estimate trip duration.
                 </p>
                 <p class="stack">Python • APIs • Mapping</p>
                 <a href="#">Project details</a>
@@ -261,8 +333,8 @@
             <article class="card">
                 <h3>Operations Analytics Tool</h3>
                 <p>
-                    A dashboard for support metrics, asset tracking, and workflow
-                    visibility across operational systems.
+                    A dashboard-oriented project focused on support metrics, asset
+                    tracking, and operational visibility.
                 </p>
                 <p class="stack">SQL • Python • Dashboarding</p>
                 <a href="#">Project details</a>
@@ -270,8 +342,10 @@
         </div>
     </section>
 
+
     <section id="about" class="about">
         <h2>About</h2>
+        <div class="section-body">
         <p>
             I’m a systems-oriented developer with experience in operations,
             technical support, data reporting, and workflow design.
@@ -290,17 +364,34 @@
 
     <section id="resume">
         <h2>Resume</h2>
+        <div class="section-body panel">
         <p>
-            You can request a current resume directly by email, or replace this text
-            with a PDF link later.
+            You can request a current resume directly by email.
+            #replace this with link later.
         </p>
         <p>
             <a href="mailto:whirligig@whirligigsoftware.com">Request resume</a>
         </p>
     </section>
 
+    <section id="collaboration" class="about">
+        <h2>Collaboration</h2>
+        <div class="section-body">
+        <p>
+            I’m currently building a portfolio of practical software projects while
+            continuing to deepen my skills in backend development, data systems,
+            and application architecture.
+        </p>
+        <p>
+            I welcome conversations with experienced engineers, technical leaders,
+            and collaborators who enjoy discussing architecture, data modeling,
+            and useful software design.
+        </p>
+    </section>
+
     <section id="contact" class="contact">
         <h2>Contact</h2>
+        <div class="section-body panel">
         <p>
             Email: <a href="mailto:whirligig@whirligigsoftware.com">whirligig@whirligigsoftware.com</a>
         </p>
